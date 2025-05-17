@@ -57,7 +57,7 @@ def predict(input: TitanicInput) -> TitanicOutput:
     input_df = pd.DataFrame.from_dict(input_dict)
 
     # Load the model
-    model_name = "src/model.joblib"
+    model_name = "app/src/model.joblib"
     model = joblib.load(model_name)
     if model is None:
         raise ValueError("Model not found or failed to load.")

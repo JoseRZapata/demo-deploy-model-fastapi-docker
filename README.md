@@ -6,14 +6,21 @@
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 
-## ✨ Features and Tools
+## ✨ Features
 
-Information about all the features and tools used in this project: <https://joserzapata.github.io/data-science-project-template/#features-and-tools>
+### FastAPI run locally
+
+Run fastapi app: `fastapi dev src/model_fastapi_deploy.py`
+
+### Run Docker
+
+Build the docker image: `docker build -t model_fastapi_deploy:v0.0.1 .`
+Run the docker container: `docker run -p 8000:80 model_fastapi_deploy:v0.0.1`
 
 ## 🗃️ Project structure
 
 - [Data structure]
-- [Pipelines based on Feature/Training/Inference Pipelines](https://www.hopsworks.ai/post/mlops-to-ml-systems-with-fti-pipelines)
+ence-project-template/#features-and-tools>- [Pipelines based on Feature/Training/Inference Pipelines](https://www.hopsworks.ai/post/mlops-to-ml-systems-with-fti-pipelines)
 
 ```bash
 .

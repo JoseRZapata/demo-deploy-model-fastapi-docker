@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+# Exclude the project virtual environment from image builds
+.venv
+.git
+# Ignore config and cache files
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.coverage
+.code_quality
+.github
+.vscode
