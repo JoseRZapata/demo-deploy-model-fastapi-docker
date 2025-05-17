@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field
 
 
 class TitanicInput(BaseModel):
-    age: int = Field(default=30, ge=0, le=100)
-    pclass: int = Field(default=1, ge=1, le=3)
+    age: int = Field(default=50, ge=0, le=100)
+    pclass: int = Field(default=2, ge=1, le=3)
     sex: str = Field(default="male", pattern="^(male|female)$")
     sibsp: int = Field(default=0, ge=0, le=15)
     parch: int = Field(default=0, ge=0, le=15)
