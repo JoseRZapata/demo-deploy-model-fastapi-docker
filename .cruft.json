@@ -1,0 +1,34 @@
+{
+  "template": "https://github.com/JoseRZapata/data-science-project-template",
+  "commit": "f48d6185d56bdedf0cbb1ecbf8a812ddc58018a2",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "demo deploy model fastapi docker",
+      "repo_name": "demo-deploy-model-fastapi-docker",
+      "github_username": "JoseRZapata",
+      "author_name": "Jose R. Zapata",
+      "author_email": "joserzapata.github.io",
+      "description": "Demo to show how to deploy a machine learning model using uv, fastapi and Docker",
+      "compatible_python_versions": "3.12",
+      "mkdocs": false,
+      "codecov": true,
+      "license": "MIT License",
+      "_copy_without_render": [
+        ".code_quality/*",
+        ".vscode/*",
+        "config/*",
+        "data/*",
+        "src/*",
+        "tests/*",
+        ".editorconfig",
+        ".pre-commit-config.yaml",
+        "codecov.yaml",
+        "docs/*"
+      ],
+      "_template": "https://github.com/JoseRZapata/data-science-project-template",
+      "_commit": "f48d6185d56bdedf0cbb1ecbf8a812ddc58018a2"
+    }
+  },
+  "directory": null
+}

@@ -1,0 +1,51 @@
+[project]
+name = "demo deploy model fastapi docker"
+version = "0.1.0"
+description = "Demo to show how to deploy a machine learning model using uv, fastapi and Docker"
+authors = [
+    "Jose R. Zapata <joserzapata.github.io>",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+
+dependencies = [
+
+]
+
+[project.urls]
+documentation = "https://JoseRZapata.github.io/demo-deploy-model-fastapi-docker"
+repository = "https://github.com/JoseRZapata/demo-deploy-model-fastapi-docker"
+
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0", # Code linting and formatting
+    "pytest>=8.3.5", # Testing framework
+    "pytest-cookies>=0.7.0",
+    "pytest-cov>=6.1.1",
+    "cruft[pyproject]>=2.15.0",# Automated Cookiecutter template synchronization
+]
+
+#
+
+[tool.uv]
+package = false
+default-groups = [
+    "dev",
+#
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.coverage.paths]
+source = ["src/"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["**/__init__.py"]
