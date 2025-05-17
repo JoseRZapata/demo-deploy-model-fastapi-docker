@@ -37,4 +37,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 WORKDIR /app
 
 # Run the FastAPI application by default
-CMD ["fastapi", "run","src/model_fastapi_deploy.py","--port", "80"]
+CMD ["fastapi", "run", "--host", "0.0.0.0", "--port", "5000", "src/model_fastapi_deploy.py"]

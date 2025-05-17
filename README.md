@@ -14,8 +14,10 @@ Run fastapi app: `fastapi dev src/model_fastapi_deploy.py`
 
 ### Run Docker
 
-Build the docker image: `docker build -t model_fastapi_deploy:v0.0.1 .`
-Run the docker container: `docker run -p 8000:80 model_fastapi_deploy:v0.0.1`
+Build the docker image: `docker build -t fastapi-docker:v0.0.1 .`
+Run the docker container: `docker run -p 5000:5000 fastapi-docker:v0.0.1`
+
+Docs will be available at `http://localhost:5000/docs`
 
 ## 🗃️ Project structure
 
@@ -52,6 +54,12 @@ predictions
     ├── launch.json                     # vscode launch configuration
     └── settings.json                   # vscode settings
 ```
+
+## References
+
+- [FastAPI documentation](https://fastapi.tiangolo.com/)
+- [Deploying Machine Learning Models with FastAPI and Docker: A Step-by-Step Guide]<https://medium.com/@gvgg1998/deploying-machine-learning-models-with-fastapi-and-docker-a-step-by-step-guide-5e35b984f792>
+- <https://github.com/Paulescu/kubernetes-for-ml-engineers>
 
 ## Credits
 

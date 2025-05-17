@@ -17,14 +17,31 @@ init_git: ## Initialize git repository
 	git commit -m "🎉 Initial commit"
 	@echo "🚀 Local Git already set!"
 
-####----Install Libraries----####
+####----fastapi and docker----####
+export PORT=5000
+dev: ## Run FastAPI application
+	@echo "🚀 Running FastAPI application"
+	fastapi dev src/model_fastapi_deploy.py
 
-install_data_libs: ## Install pandas, scikit-learn, Jupyter, seaborn
-	@echo "🚀 Installing data science libraries..."
-	uv add "pandas[parquet]" numpy scipy scikit-learn
-	@echo "🚀 Installing Jupyter, matplotlib and seaborn in dev..."
-	uv add jupyter matplotlib seaborn --group dev
+dock-build: ## Build Docker image
+	@echo "🚀 Building Docker image"
+	docker build -t fastapi-docker:v1.0.0 .
 
+dock-run: ## run Docker image
+	@echo "🚀 Building Docker image"
+	docker run -it -p $(PORT):5000 fastapi-docker:v1.0.0
+
+api-ping: ## ping the api to check if it's running
+	@echo "🚀 Testing FastAPI application"
+	curl http://localhost:$(PORT)/
+
+api-response: ## ping the api to check if it's running
+	@echo "🚀 Testing FastAPI application"
+	curl -X 'POST' \
+  'http://localhost:$(PORT)/predict' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{"age": 50, "pclass": 2, "sex": "male", "sibsp": 0, "parch": 0, "fare": 30, "embarked": "C"}'
 
 ####----Tests----####
 test: ## Test the code with pytest and coverage
