@@ -22,6 +22,7 @@ app = FastAPI(
     title="Titanic Survival Prediction API",
     description="API for predicting survival on the Titanic",
     version="1.0",
+    swagger_ui_parameters={"syntaxHighlight": {"theme": "obsidian"}},
 )
 
 
@@ -56,11 +57,14 @@ def predict(input: TitanicInput) -> TitanicOutput:
 
     input_df = pd.DataFrame.from_dict(input_dict)
 
-    # Load the model
-    model_name = "app/src/model.joblib"
+    # Obtener la ruta del modelo desde variable de entorno o usar valor por defecto
+    model_name = "src/model.joblib"
+
+    print(f"Intentando cargar modelo desde: {model_name}")
     model = joblib.load(model_name)
     if model is None:
-        raise ValueError("Model not found or failed to load.")
+        MODEL_ERROR = "Model not found"
+        raise ValueError(MODEL_ERROR)
 
     # Make prediction
     prediction = model.predict(input_df)[0]

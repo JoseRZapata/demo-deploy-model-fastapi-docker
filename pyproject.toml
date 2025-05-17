@@ -23,7 +23,7 @@ repository = "https://github.com/JoseRZapata/demo-deploy-model-fastapi-docker"
 dev = [
     "pre-commit>=4.2.0", # Code linting and formatting
     "pytest>=8.3.5", # Testing framework
-    "pytest-cov>=6.1.1"
+    "pytest-cov>=6.1.1",
 ]
 
 #

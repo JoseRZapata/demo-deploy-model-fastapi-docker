@@ -33,5 +33,8 @@ COPY --from=builder --chown=app:app /app /app
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
+# Set the working directory a la raíz
+WORKDIR /app
+
 # Run the FastAPI application by default
-CMD ["fastapi", "run","/app/src/model_fastapi_deploy.py","--port", "80"]
+CMD ["fastapi", "run","src/model_fastapi_deploy.py","--port", "80"]
