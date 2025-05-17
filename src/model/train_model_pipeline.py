@@ -40,13 +40,9 @@ dataset_features = dataset[
 
 # Categorical variables
 
-dataset[["sex", "embarked", "pclass"]] = dataset[["sex", "embarked", "pclass"]].astype(
-    "category"
-)
+dataset[["sex", "embarked", "pclass"]] = dataset[["sex", "embarked", "pclass"]].astype("category")
 
-dataset["pclass"] = pd.Categorical(
-    dataset["pclass"], categories=[3, 2, 1], ordered=True
-)
+dataset["pclass"] = pd.Categorical(dataset["pclass"], categories=[3, 2, 1], ordered=True)
 
 # Numerical variables
 
